@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--单个配置文件
+    <bean id="Constants" autowire="byName" class="com.ericsson.onip.common.config.Constants">
+        <property name="configFile" value="classpath:constants.properties"></property>
+    </bean>
+
+    <bean id="Config" autowire="byName" class="com.ericsson.onip.common.config.Config">
+        <property name="configFile" value="classpath:environment.properties"></property>
+    </bean>
+
+    <bean id="CQConstants" autowire="byName" class="com.ericsson.onip.common.config.CQConstants">
+        <property name="configFile" value="classpath:cqconfig.properties"></property>
+    </bean>
+
+    <bean id="SpringContextUtil" autowire="byName"  class="com.ericsson.onip.utils.SpringContextUtil"></bean>
+-->
+
+    <!--多个配置文件-->
+    <!--常量配置-->
+    <!--<bean id="Constants" autowire="byName" class="com.ericsson.onip.common.config.Constants">-->
+        <!--<property name="configFiles">-->
+            <!--<list>-->
+                <!--<value>classpath:constants.properties</value>-->
+                <!--&lt;!&ndash;可增加多个配置文件&ndash;&gt;-->
+                <!--<value>classpath:constants1.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;变量配置&ndash;&gt;-->
+    <!--<bean id="Config" autowire="byName" class="com.ericsson.onip.common.config.Config">-->
+        <!--<property name="configFiles">-->
+            <!--<list>-->
+                <!--<value>classpath:environment.properties</value>-->
+                <!--&lt;!&ndash;可增加多个配置文件&ndash;&gt;-->
+                <!--<value>classpath:environment1.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+	 <bean id="MConstants" autowire="byName" class="com.wyy.mclub.config.MConstants">
+        <property name="configFile" value="classpath:sysconfig/m-constants.properties"></property>
+    </bean>
+
+</beans>

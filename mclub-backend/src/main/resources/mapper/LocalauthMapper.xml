@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.wyy.mclub.dao.ILocalauthMapper">
+ <!--  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.Localauth">
+    <id column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="loginname" jdbcType="VARCHAR" property="loginname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  -->
+   <sql id="Localauth_Column_List">
+    userid,loginname, password
+  </sql>
+  <insert id="insert" parameterType="com.wyy.mclub.model.Localauth">
+    insert into db_localauth (userid, loginname, 
+      password)
+    values (#{userid,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR})
+  </insert>
+  
+  <select id="selectByUserid" parameterType="java.lang.String" resultType="com.wyy.mclub.model.Localauth">
+    select 
+    <include refid="Localauth_Column_List" />
+    from db_localauth
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByLoginName" parameterType="java.lang.String" resultType="com.wyy.mclub.model.Localauth">
+    select 
+    <include refid="Localauth_Column_List" />
+    from db_localauth
+    where loginname = #{loginname,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

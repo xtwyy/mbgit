@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyy.mclub.dao.IDictitemMapper">
+ <!--  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.Dictitem">
+    <id column="oid" jdbcType="INTEGER" property="oid" />
+    <result column="groupid" jdbcType="VARCHAR" property="groupid" />
+    <result column="dictid" jdbcType="VARCHAR" property="dictid" />
+    <result column="dictname" jdbcType="VARCHAR" property="dictname" />
+    <result column="dictvalue" jdbcType="VARCHAR" property="dictvalue" />
+    <result column="sort" jdbcType="TINYINT" property="sort" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oid, groupid, dictid, dictname, dictvalue, sort, status, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from db_dictitem
+    where oid = #{oid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from db_dictitem
+    where oid = #{oid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.Dictitem">
+    insert into db_dictitem (oid, groupid, dictid, 
+      dictname, dictvalue, sort, 
+      status, remark)
+    values (#{oid,jdbcType=INTEGER}, #{groupid,jdbcType=VARCHAR}, #{dictid,jdbcType=VARCHAR}, 
+      #{dictname,jdbcType=VARCHAR}, #{dictvalue,jdbcType=VARCHAR}, #{sort,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.Dictitem">
+    insert into db_dictitem
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="groupid != null">
+        groupid,
+      </if>
+      <if test="dictid != null">
+        dictid,
+      </if>
+      <if test="dictname != null">
+        dictname,
+      </if>
+      <if test="dictvalue != null">
+        dictvalue,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="groupid != null">
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dictvalue != null">
+        #{dictvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.Dictitem">
+    update db_dictitem
+    <set>
+      <if test="groupid != null">
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        dictid = #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        dictname = #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dictvalue != null">
+        dictvalue = #{dictvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.Dictitem">
+    update db_dictitem
+    set groupid = #{groupid,jdbcType=VARCHAR},
+      dictid = #{dictid,jdbcType=VARCHAR},
+      dictname = #{dictname,jdbcType=VARCHAR},
+      dictvalue = #{dictvalue,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR}
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.Dictitem">
+    <id column="oid" jdbcType="INTEGER" property="oid" />
+    <result column="groupid" jdbcType="VARCHAR" property="groupid" />
+    <result column="dictid" jdbcType="VARCHAR" property="dictid" />
+    <result column="dictname" jdbcType="VARCHAR" property="dictname" />
+    <result column="dictvalue" jdbcType="VARCHAR" property="dictvalue" />
+    <result column="sort" jdbcType="TINYINT" property="sort" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    oid, groupid, dictid, dictname, dictvalue, sort, status, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from db_dictitem
+    where oid = #{oid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from db_dictitem
+    where oid = #{oid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.Dictitem">
+    insert into db_dictitem (oid, groupid, dictid, 
+      dictname, dictvalue, sort, 
+      status, remark)
+    values (#{oid,jdbcType=INTEGER}, #{groupid,jdbcType=VARCHAR}, #{dictid,jdbcType=VARCHAR}, 
+      #{dictname,jdbcType=VARCHAR}, #{dictvalue,jdbcType=VARCHAR}, #{sort,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.Dictitem">
+    insert into db_dictitem
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="groupid != null">
+        groupid,
+      </if>
+      <if test="dictid != null">
+        dictid,
+      </if>
+      <if test="dictname != null">
+        dictname,
+      </if>
+      <if test="dictvalue != null">
+        dictvalue,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="groupid != null">
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dictvalue != null">
+        #{dictvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.Dictitem">
+    update db_dictitem
+    <set>
+      <if test="groupid != null">
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        dictid = #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        dictname = #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="dictvalue != null">
+        dictvalue = #{dictvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.Dictitem">
+    update db_dictitem
+    set groupid = #{groupid,jdbcType=VARCHAR},
+      dictid = #{dictid,jdbcType=VARCHAR},
+      dictname = #{dictname,jdbcType=VARCHAR},
+      dictvalue = #{dictvalue,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR}
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>--> 
+</mapper>
