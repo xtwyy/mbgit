@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyy.mclub.dao.IMrecordsInfoMapper">
+  <!-- <resultMap id="BaseResultMap" type="com.wyy.mclub.model.MrecordsInfo">
+    <id column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="oprtime" jdbcType="DATE" property="oprtime" />
+    <result column="startday" jdbcType="DATE" property="startday" />
+    <result column="endday" jdbcType="DATE" property="endday" />
+    <result column="ovulationday" jdbcType="DATE" property="ovulationday" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    seq, userid, oprtime, startday, endday, ovulationday
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from m_records
+    where seq = #{seq,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from m_records
+    where seq = #{seq,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    insert into m_records (seq, userid, oprtime, 
+      startday, endday, ovulationday
+      )
+    values (#{seq,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{oprtime,jdbcType=DATE}, 
+      #{startday,jdbcType=DATE}, #{endday,jdbcType=DATE}, #{ovulationday,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    insert into m_records
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        seq,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="oprtime != null">
+        oprtime,
+      </if>
+      <if test="startday != null">
+        startday,
+      </if>
+      <if test="endday != null">
+        endday,
+      </if>
+      <if test="ovulationday != null">
+        ovulationday,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        #{seq,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtime != null">
+        #{oprtime,jdbcType=DATE},
+      </if>
+      <if test="startday != null">
+        #{startday,jdbcType=DATE},
+      </if>
+      <if test="endday != null">
+        #{endday,jdbcType=DATE},
+      </if>
+      <if test="ovulationday != null">
+        #{ovulationday,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtime != null">
+        oprtime = #{oprtime,jdbcType=DATE},
+      </if>
+      <if test="startday != null">
+        startday = #{startday,jdbcType=DATE},
+      </if>
+      <if test="endday != null">
+        endday = #{endday,jdbcType=DATE},
+      </if>
+      <if test="ovulationday != null">
+        ovulationday = #{ovulationday,jdbcType=DATE},
+      </if>
+    </set>
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    set userid = #{userid,jdbcType=VARCHAR},
+      oprtime = #{oprtime,jdbcType=DATE},
+      startday = #{startday,jdbcType=DATE},
+      endday = #{endday,jdbcType=DATE},
+      ovulationday = #{ovulationday,jdbcType=DATE}
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.MrecordsInfo">
+    <id column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="oprtime" jdbcType="DATE" property="oprtime" />
+    <result column="startday" jdbcType="DATE" property="startday" />
+    <result column="endday" jdbcType="DATE" property="endday" />
+    <result column="ovulationday" jdbcType="DATE" property="ovulationday" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    seq, userid, oprtime, startday, endday, ovulationday
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from m_records
+    where seq = #{seq,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from m_records
+    where seq = #{seq,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    insert into m_records (seq, userid, oprtime, 
+      startday, endday, ovulationday
+      )
+    values (#{seq,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{oprtime,jdbcType=DATE}, 
+      #{startday,jdbcType=DATE}, #{endday,jdbcType=DATE}, #{ovulationday,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    insert into m_records
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        seq,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="oprtime != null">
+        oprtime,
+      </if>
+      <if test="startday != null">
+        startday,
+      </if>
+      <if test="endday != null">
+        endday,
+      </if>
+      <if test="ovulationday != null">
+        ovulationday,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        #{seq,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtime != null">
+        #{oprtime,jdbcType=DATE},
+      </if>
+      <if test="startday != null">
+        #{startday,jdbcType=DATE},
+      </if>
+      <if test="endday != null">
+        #{endday,jdbcType=DATE},
+      </if>
+      <if test="ovulationday != null">
+        #{ovulationday,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtime != null">
+        oprtime = #{oprtime,jdbcType=DATE},
+      </if>
+      <if test="startday != null">
+        startday = #{startday,jdbcType=DATE},
+      </if>
+      <if test="endday != null">
+        endday = #{endday,jdbcType=DATE},
+      </if>
+      <if test="ovulationday != null">
+        ovulationday = #{ovulationday,jdbcType=DATE},
+      </if>
+    </set>
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    set userid = #{userid,jdbcType=VARCHAR},
+      oprtime = #{oprtime,jdbcType=DATE},
+      startday = #{startday,jdbcType=DATE},
+      endday = #{endday,jdbcType=DATE},
+      ovulationday = #{ovulationday,jdbcType=DATE}
+    where seq = #{seq,jdbcType=INTEGER}
+  </update> -->
+  
+  <resultMap id="MrecordsResultMap" type="com.wyy.mclub.model.MrecordsInfo">
+    <id column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="oprtime" jdbcType="DATE" property="oprtime" />
+    <result column="startday" jdbcType="DATE" property="startday" />
+    <result column="endday" jdbcType="DATE" property="endday" />
+    <result column="ovulationday" jdbcType="DATE" property="ovulationday" />
+  </resultMap>
+  
+  <sql id="Mrecords_Column_List">
+    seq, userid, oprtime, startday, endday, ovulationday
+  </sql>
+  
+  <insert id="insertMrecords" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    insert into m_records (seq, userid, oprtime, 
+      startday, endday, ovulationday
+      )
+    values (#{seq,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{oprtime,jdbcType=DATE}, 
+      #{startday,jdbcType=DATE}, #{endday,jdbcType=DATE}, #{ovulationday,jdbcType=DATE}
+      )
+  </insert>
+  
+  <update id="updateMrecords" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtime != null">
+        oprtime = #{oprtime,jdbcType=DATE},
+      </if>
+      <if test="startday != null">
+        startday = #{startday,jdbcType=DATE},
+      </if>
+      <if test="endday != null">
+        endday = #{endday,jdbcType=DATE},
+      </if>
+      <if test="ovulationday != null">
+        ovulationday = #{ovulationday,jdbcType=DATE},
+      </if>
+    </set>
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  
+   <update id="endMrecords" parameterType="com.wyy.mclub.model.MrecordsInfo">
+    update m_records
+    <set>
+      <if test="endday != null">
+        endday = #{endday,jdbcType=DATE},
+      </if>
+    </set>
+     where seq = (select ab.seq from (select seq from m_records where startday  &lt;=  #{endday,jdbcType=DATE} and userid = #{userid,jdbcType=VARCHAR} order by startday desc limit 1) ab)
+  </update>
+  
+    <select id="getMRecords" resultType="com.wyy.mclub.model.MrecordsInfo">
+    select 
+    <include refid="Mrecords_Column_List" />
+    from m_records
+    where userid = #{userId,jdbcType=VARCHAR} and ((startday &gt;= #{startDay,jdbcType=DATE} and startday &lt;= #{endDay,jdbcType=DATE}) or (endday &gt;= #{startDay,jdbcType=DATE} and endday &lt;= #{endDay,jdbcType=DATE}) or(ovulationday &gt;= #{startDay,jdbcType=DATE} and ovulationday &lt;= #{endDay,jdbcType=DATE}))
+  </select>
+  
+</mapper>

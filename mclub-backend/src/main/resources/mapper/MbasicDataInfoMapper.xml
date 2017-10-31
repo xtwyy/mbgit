@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wyy.mclub.dao.IMbasicDataInfoMapper" >
+ <!--  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.MbasicDataInfo" >
+    <id column="userid" property="userid" jdbcType="VARCHAR" />
+    <result column="period" property="period" jdbcType="VARCHAR" />
+    <result column="mdays" property="mdays" jdbcType="TINYINT" />
+    <result column="mcycle" property="mcycle" jdbcType="TINYINT" />
+    <result column="initime" property="initime" jdbcType="DATE" />
+    <result column="opttime" property="opttime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userid, period, mdays, mcycle, initime, opttime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from m_basic_data
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from m_basic_data
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    insert into m_basic_data (userid, period, mdays, 
+      mcycle, initime, opttime)
+    values (#{userid,jdbcType=VARCHAR}, #{period,jdbcType=VARCHAR}, #{mdays,jdbcType=TINYINT}, 
+      #{mcycle,jdbcType=TINYINT}, #{initime,jdbcType=DATE}, #{opttime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    insert into m_basic_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="period != null" >
+        period,
+      </if>
+      <if test="mdays != null" >
+        mdays,
+      </if>
+      <if test="mcycle != null" >
+        mcycle,
+      </if>
+      <if test="initime != null" >
+        initime,
+      </if>
+      <if test="opttime != null" >
+        opttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="period != null" >
+        #{period,jdbcType=VARCHAR},
+      </if>
+      <if test="mdays != null" >
+        #{mdays,jdbcType=TINYINT},
+      </if>
+      <if test="mcycle != null" >
+        #{mcycle,jdbcType=TINYINT},
+      </if>
+      <if test="initime != null" >
+        #{initime,jdbcType=DATE},
+      </if>
+      <if test="opttime != null" >
+        #{opttime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    update m_basic_data
+    <set >
+      <if test="period != null" >
+        period = #{period,jdbcType=VARCHAR},
+      </if>
+      <if test="mdays != null" >
+        mdays = #{mdays,jdbcType=TINYINT},
+      </if>
+      <if test="mcycle != null" >
+        mcycle = #{mcycle,jdbcType=TINYINT},
+      </if>
+      <if test="initime != null" >
+        initime = #{initime,jdbcType=DATE},
+      </if>
+      <if test="opttime != null" >
+        opttime = #{opttime,jdbcType=DATE},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    update m_basic_data
+    set period = #{period,jdbcType=VARCHAR},
+      mdays = #{mdays,jdbcType=TINYINT},
+      mcycle = #{mcycle,jdbcType=TINYINT},
+      initime = #{initime,jdbcType=DATE},
+      opttime = #{opttime,jdbcType=DATE}
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update> -->
+  <sql id="BasicData_Column_List" >
+    userid, period, mdays, mcycle, initime, opttime
+  </sql>
+  
+   <insert id="insertBasicData" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    insert into m_basic_data (userid, period, mdays, 
+      mcycle, initime, opttime)
+    values (#{userid,jdbcType=VARCHAR}, #{period,jdbcType=VARCHAR}, #{mdays,jdbcType=TINYINT}, 
+      #{mcycle,jdbcType=TINYINT}, #{initime,jdbcType=DATE}, #{opttime,jdbcType=DATE})
+  </insert>
+  
+   <update id="updateBasicData" parameterType="com.wyy.mclub.model.MbasicDataInfo" >
+    update m_basic_data
+    <set >
+      <if test="period != null" >
+        period = #{period,jdbcType=VARCHAR},
+      </if>
+      <if test="mdays != null" >
+        mdays = #{mdays,jdbcType=TINYINT},
+      </if>
+      <if test="mcycle != null" >
+        mcycle = #{mcycle,jdbcType=TINYINT},
+      </if>
+      <if test="initime != null" >
+        initime = #{initime,jdbcType=DATE},
+      </if>
+      <if test="opttime != null" >
+        opttime = #{opttime,jdbcType=DATE},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  
+   <select id="selectMdaysByUserid" resultType="java.lang.Byte" parameterType="java.lang.String" >
+    select mdays from m_basic_data
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultType="com.wyy.mclub.model.MbasicDataInfo" parameterType="java.lang.String" >
+    select 
+    <include refid="BasicData_Column_List" />
+    from m_basic_data
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>

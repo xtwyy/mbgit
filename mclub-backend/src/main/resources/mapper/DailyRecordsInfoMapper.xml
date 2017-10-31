@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyy.mclub.dao.IDailyRecordsInfoMapper">
+ <!-- <resultMap id="dailyRecordsMap" type="com.wyy.mclub.model.DailyRecordsInfo">
+    <id column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="mstatus" jdbcType="VARCHAR" property="mstatus" />
+    <result column="love" jdbcType="VARCHAR" property="love" />
+    <result column="ovulation" jdbcType="VARCHAR" property="ovulation" />
+    <result column="leucorrhea" jdbcType="VARCHAR" property="leucorrhea" />
+    <result column="temperature" jdbcType="DOUBLE" property="temperature" />
+    <result column="weight" jdbcType="DOUBLE" property="weight" />
+    <result column="mood" jdbcType="VARCHAR" property="mood" />
+    <result column="habit" jdbcType="VARCHAR" property="habit" />
+    <result column="uncomfortable" jdbcType="VARCHAR" property="uncomfortable" />
+    <result column="diary" jdbcType="VARCHAR" property="diary" />
+  </resultMap>
+  <sql id="dailyRecordsList">
+    seq, userid, mstatus, love, ovulation, leucorrhea, temperature, weight, mood, habit, 
+    uncomfortable, diary
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="dailyRecordsMap">
+    select 
+    <include refid="dailyRecordsList" />
+    from m_dailyrecords
+    where seq = #{seq,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from m_dailyrecords
+    where seq = #{seq,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.DailyRecordsInfo">
+    insert into m_dailyrecords
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        seq,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="mstatus != null">
+        mstatus,
+      </if>
+      <if test="love != null">
+        love,
+      </if>
+      <if test="ovulation != null">
+        ovulation,
+      </if>
+      <if test="leucorrhea != null">
+        leucorrhea,
+      </if>
+      <if test="temperature != null">
+        temperature,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="mood != null">
+        mood,
+      </if>
+      <if test="habit != null">
+        habit,
+      </if>
+      <if test="uncomfortable != null">
+        uncomfortable,
+      </if>
+      <if test="diary != null">
+        diary,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        #{seq,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="mstatus != null">
+        #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="love != null">
+        #{love,jdbcType=VARCHAR},
+      </if>
+      <if test="ovulation != null">
+        #{ovulation,jdbcType=VARCHAR},
+      </if>
+      <if test="leucorrhea != null">
+        #{leucorrhea,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="mood != null">
+        #{mood,jdbcType=VARCHAR},
+      </if>
+      <if test="habit != null">
+        #{habit,jdbcType=VARCHAR},
+      </if>
+      <if test="uncomfortable != null">
+        #{uncomfortable,jdbcType=VARCHAR},
+      </if>
+      <if test="diary != null">
+        #{diary,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.DailyRecordsInfo">
+    update m_dailyrecords
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="mstatus != null">
+        mstatus = #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="love != null">
+        love = #{love,jdbcType=VARCHAR},
+      </if>
+      <if test="ovulation != null">
+        ovulation = #{ovulation,jdbcType=VARCHAR},
+      </if>
+      <if test="leucorrhea != null">
+        leucorrhea = #{leucorrhea,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="mood != null">
+        mood = #{mood,jdbcType=VARCHAR},
+      </if>
+      <if test="habit != null">
+        habit = #{habit,jdbcType=VARCHAR},
+      </if>
+      <if test="uncomfortable != null">
+        uncomfortable = #{uncomfortable,jdbcType=VARCHAR},
+      </if>
+      <if test="diary != null">
+        diary = #{diary,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.DailyRecordsInfo">
+    update m_dailyrecords
+    set userid = #{userid,jdbcType=VARCHAR},
+      mstatus = #{mstatus,jdbcType=VARCHAR},
+      love = #{love,jdbcType=VARCHAR},
+      ovulation = #{ovulation,jdbcType=VARCHAR},
+      leucorrhea = #{leucorrhea,jdbcType=VARCHAR},
+      temperature = #{temperature,jdbcType=DOUBLE},
+      weight = #{weight,jdbcType=DOUBLE},
+      mood = #{mood,jdbcType=VARCHAR},
+      habit = #{habit,jdbcType=VARCHAR},
+      uncomfortable = #{uncomfortable,jdbcType=VARCHAR},
+      diary = #{diary,jdbcType=VARCHAR}
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>-->
+  
+   <sql id="dailyRecordsList">
+    seq, userid, recday,mstatus, love, ovulation, leucorrhea, temperature, weight, mood, habit, 
+    uncomfortable, diary
+  </sql>
+  
+  <insert id="insert" parameterType="com.wyy.mclub.model.DailyRecordsInfo">
+    insert into m_dailyrecords (seq, userid,recday, mstatus, 
+      love, ovulation, leucorrhea, 
+      temperature, weight, mood, 
+      habit, uncomfortable, diary
+      )
+    values (#{seq,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR},#{recday,jdbcType=VARCHAR}, #{mstatus,jdbcType=VARCHAR}, 
+      #{love,jdbcType=VARCHAR}, #{ovulation,jdbcType=VARCHAR}, #{leucorrhea,jdbcType=VARCHAR}, 
+      #{temperature,jdbcType=DOUBLE}, #{weight,jdbcType=DOUBLE}, #{mood,jdbcType=VARCHAR}, 
+      #{habit,jdbcType=VARCHAR}, #{uncomfortable,jdbcType=VARCHAR}, #{diary,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <update id="updateByDay" parameterType="com.wyy.mclub.model.DailyRecordsInfo">
+    update m_dailyrecords
+    <set>
+      <if test="mstatus != null">
+        mstatus = #{mstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="love != null">
+        love = #{love,jdbcType=VARCHAR},
+      </if>
+      <if test="ovulation != null">
+        ovulation = #{ovulation,jdbcType=VARCHAR},
+      </if>
+      <if test="leucorrhea != null">
+        leucorrhea = #{leucorrhea,jdbcType=VARCHAR},
+      </if>
+      <if test="temperature != null">
+        temperature = #{temperature,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=DOUBLE},
+      </if>
+      <if test="mood != null">
+        mood = #{mood,jdbcType=VARCHAR},
+      </if>
+      <if test="habit != null">
+        habit = #{habit,jdbcType=VARCHAR},
+      </if>
+      <if test="uncomfortable != null">
+        uncomfortable = #{uncomfortable,jdbcType=VARCHAR},
+      </if>
+      <if test="diary != null">
+        diary = #{diary,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER} and recday=#{recday,jdbcType=INTEGER}
+  </update>
+  
+    <select id="getDailyRecords" resultType="com.wyy.mclub.model.DailyRecordsInfo">
+    select 
+    <include refid="dailyRecordsList" />
+    from m_dailyrecords
+    where userid = #{userId,jdbcType=VARCHAR} and recday &gt;= #{startDay,jdbcType=VARCHAR} and recday &lt;= #{endDay,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByDay" resultType="com.wyy.mclub.model.DailyRecordsInfo">
+    select 
+    <include refid="dailyRecordsList" />
+    from m_dailyrecords
+    where userid = #{userId,jdbcType=VARCHAR} and recday = #{recDay,jdbcType=VARCHAR} 
+  </select>
+  
+</mapper>

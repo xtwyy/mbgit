@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyy.mclub.dao.IUsersMapper">
+  <!--  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.Users">
+    <id column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="userid3" jdbcType="VARCHAR" property="userid3" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="regDate" jdbcType="DATE" property="regdate" />
+    <result column="birth" jdbcType="DATE" property="birth" />
+    <result column="curlive" jdbcType="VARCHAR" property="curlive" />
+    <result column="hometown" jdbcType="VARCHAR" property="hometown" />
+    <result column="phonenumber" jdbcType="VARCHAR" property="phonenumber" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, userid3, nickname, name, sex, regDate, birth, curlive, hometown, phonenumber, 
+    source
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from db_users
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from db_users
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.Users">
+    insert into db_users (userid, userid3, nickname, 
+      name, sex, regDate, birth, 
+      curlive, hometown, phonenumber, 
+      source)
+    values (#{userid,jdbcType=VARCHAR}, #{userid3,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{regdate,jdbcType=DATE}, #{birth,jdbcType=DATE}, 
+      #{curlive,jdbcType=VARCHAR}, #{hometown,jdbcType=VARCHAR}, #{phonenumber,jdbcType=VARCHAR}, 
+      #{source,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.Users">
+    insert into db_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userid3 != null">
+        userid3,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="regdate != null">
+        regDate,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="curlive != null">
+        curlive,
+      </if>
+      <if test="hometown != null">
+        hometown,
+      </if>
+      <if test="phonenumber != null">
+        phonenumber,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid3 != null">
+        #{userid3,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="regdate != null">
+        #{regdate,jdbcType=DATE},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="curlive != null">
+        #{curlive,jdbcType=VARCHAR},
+      </if>
+      <if test="hometown != null">
+        #{hometown,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null">
+        #{phonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.Users">
+    update db_users
+    <set>
+      <if test="userid3 != null">
+        userid3 = #{userid3,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="regdate != null">
+        regDate = #{regdate,jdbcType=DATE},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="curlive != null">
+        curlive = #{curlive,jdbcType=VARCHAR},
+      </if>
+      <if test="hometown != null">
+        hometown = #{hometown,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null">
+        phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.Users">
+    update db_users
+    set userid3 = #{userid3,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      regDate = #{regdate,jdbcType=DATE},
+      birth = #{birth,jdbcType=DATE},
+      curlive = #{curlive,jdbcType=VARCHAR},
+      hometown = #{hometown,jdbcType=VARCHAR},
+      phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.wyy.mclub.model.Users">
+    <id column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="regDate" jdbcType="DATE" property="regdate" />
+    <result column="birth" jdbcType="DATE" property="birth" />
+    <result column="curlive" jdbcType="VARCHAR" property="curlive" />
+    <result column="hometown" jdbcType="VARCHAR" property="hometown" />
+    <result column="phonenumber" jdbcType="VARCHAR" property="phonenumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, nickname, name, sex, regDate, birth, curlive, hometown, phonenumber
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from db_users
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from db_users
+    where userid = #{userid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wyy.mclub.model.Users">
+    insert into db_users (userid, nickname, name, 
+      sex, regDate, birth, curlive, 
+      hometown, phonenumber)
+    values (#{userid,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{regdate,jdbcType=DATE}, #{birth,jdbcType=DATE}, #{curlive,jdbcType=VARCHAR}, 
+      #{hometown,jdbcType=VARCHAR}, #{phonenumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wyy.mclub.model.Users">
+    insert into db_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="regdate != null">
+        regDate,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="curlive != null">
+        curlive,
+      </if>
+      <if test="hometown != null">
+        hometown,
+      </if>
+      <if test="phonenumber != null">
+        phonenumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="regdate != null">
+        #{regdate,jdbcType=DATE},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="curlive != null">
+        #{curlive,jdbcType=VARCHAR},
+      </if>
+      <if test="hometown != null">
+        #{hometown,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null">
+        #{phonenumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.Users">
+    update db_users
+    <set>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="regdate != null">
+        regDate = #{regdate,jdbcType=DATE},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="curlive != null">
+        curlive = #{curlive,jdbcType=VARCHAR},
+      </if>
+      <if test="hometown != null">
+        hometown = #{hometown,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null">
+        phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wyy.mclub.model.Users">
+    update db_users
+    set nickname = #{nickname,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      regDate = #{regdate,jdbcType=DATE},
+      birth = #{birth,jdbcType=DATE},
+      curlive = #{curlive,jdbcType=VARCHAR},
+      hometown = #{hometown,jdbcType=VARCHAR},
+      phonenumber = #{phonenumber,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>-->
+  
+   <sql id="User_Column_List">
+    userid, userid3, nickname, name, sex, regDate, birth, curlive, hometown, phonenumber, 
+    source
+  </sql>
+  <select id="selectByUserid" parameterType="java.lang.String" resultType="com.wyy.mclub.model.Users">
+    select 
+    <include refid="User_Column_List" />
+    from db_users
+    where userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByUserid3" parameterType="java.lang.String" resultType="com.wyy.mclub.model.Users">
+    select 
+    <include refid="User_Column_List" />
+    from db_users
+    where userid3 = #{userid3,jdbcType=VARCHAR}
+  </select>
+  
+   <insert id="insert" parameterType="com.wyy.mclub.model.Users">
+    insert into db_users (userid, userid3, nickname, 
+      name, sex, regDate, birth, 
+      curlive, hometown, phonenumber, 
+      source)
+    values (#{userid,jdbcType=VARCHAR}, #{userid3,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{regdate,jdbcType=DATE}, #{birth,jdbcType=DATE}, 
+      #{curlive,jdbcType=VARCHAR}, #{hometown,jdbcType=VARCHAR}, #{phonenumber,jdbcType=VARCHAR}, 
+      #{source,jdbcType=VARCHAR})
+  </insert>
+   <update id="updateByPrimaryKeySelective" parameterType="com.wyy.mclub.model.Users">
+    update db_users
+    <set>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="regdate != null">
+        regDate = #{regdate,jdbcType=DATE},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="curlive != null">
+        curlive = #{curlive,jdbcType=VARCHAR},
+      </if>
+      <if test="hometown != null">
+        hometown = #{hometown,jdbcType=VARCHAR},
+      </if>
+      <if test="phonenumber != null">
+        phonenumber = #{phonenumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=VARCHAR}
+  </update>
+</mapper>
