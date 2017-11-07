@@ -65,7 +65,9 @@ public class Login {
 		String userName = request.getParameter("un");
 		String passWord = request.getParameter("pd");
 		
+
 		String result = "{\"code\":\"0\",\"msg\":\"登录成功\"}"; 
+
 		response.setCharacterEncoding("UTF-8");
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.getWriter().print(result);
